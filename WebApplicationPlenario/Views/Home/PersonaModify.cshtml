@@ -1,0 +1,70 @@
+﻿<div class="container">
+    <div class="row mt-2 mb-4">
+        <div class="col-3"></div>
+        <div class="col" style="text-align:center">
+            <h1>Modificar Persona</h1>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row mt-2 mb-lg-4">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <form method="post">
+        <div class="row" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="hidden" class="form-control w-100" name="personaID" value="@Model.PersonaID">
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="text" class="form-control w-100" style="max-width:none !important" name="nombre" value="@Model.Nombre" placeholder="Nombre">
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="row mt-4" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="datetime" class="form-control w-100" style="max-width:none !important" name="fechaDeNacimiento" value="@Model.FechaNacimiento" placeholder="Fecha de nacimiento">
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="row mt-4" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="text" class="form-control w-100" style="max-width:none !important" name="creditoMaximo" value="@Model.CreditoMaximo.ToString()" placeholder="Crédito máximo">
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-4" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <button type="submit" class="btn btn-success w-100">Guardar cambios</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/Home/PersonaList" type="button" class="btn btn-info w-100">
+                    Lista de personas &raquo;
+                </a>
+            </div>
+            <div class="col">
+                <a href="/Home" type="button" class="btn btn-info w-100">
+                    Volver al inicio &raquo;
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

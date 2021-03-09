@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Plenario.Data.Models.Persona>
+<div class="container">
+    <div class="row mt-2 mb-4" style="text-align:center">
+        <div class="col">
+            <h1>Lista de Personas</h1>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditoMaximo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditoMaximo)
+                </td>
+                <td>
+                    @Html.ActionLink("Modificar", "PersonaModify", new { id = item.PersonaID })<br>
+                    @Html.ActionLink("Eliminar", "PersonaDelete", new { id = item.PersonaID })<br>
+                    @Html.ActionLink("Administrar teléfonos", "TelefonoList", new { id = item.PersonaID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="row mt-4">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/Home/PersonaAdd" type="button" class="btn btn-success w-100">
+                Crear persona &raquo;
+            </a>
+        </div>
+        <div class="col">
+            <a href="/Home" type="button" class="btn btn-info w-100">
+                Volver al inicio &raquo;
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Plenario.Data.Models.Telefono>
+
+<div class="container">
+    <div class="row mt-2 mb-4" style="text-align:center">
+        <div class="col">
+            <h1>Lista de teléfonos</h1>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono1)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono1)
+                </td>
+                <td>
+                    @Html.ActionLink("Modificar", "TelefonoModify", new { id = item.TelefonoID })<br>
+                    @Html.ActionLink("Eliminar", "TelefonoDelete", new { id = item.TelefonoID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="row mt-4">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/Home/TelefonoAdd" type="button" class="btn btn-success w-100">
+                Crear teléfono &raquo;
+            </a>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <a href="/Home/PersonaList" type="button" class="btn btn-info w-100">
+                Vovler a la lista de personas &raquo;
+            </a>
+        </div>
+        <div class="col">
+            <a href="/Home" type="button" class="btn btn-info w-100">
+                Volver al inicio &raquo;
+            </a>
+        </div>
+    </div>
+</div>

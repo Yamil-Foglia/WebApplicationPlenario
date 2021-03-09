@@ -1,0 +1,50 @@
+﻿@model Plenario.Data.Models.Telefono
+
+<div class="container">
+    <div class="row mt-2 mb-4">
+        <div class="col-3"></div>
+        <div class="col" style="text-align:center">
+            <h1>Agregar Teléfono</h1>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row mt-2 mb-lg-4">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <form method="post">
+        <div class="row mt-4" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="text" class="form-control w-100" style="max-width:none !important" name="numeroDeTelefono" placeholder="Numero de teléfono">
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-4" style="text-align:center">
+            <div class="col-3"></div>
+            <div class="col">
+                <button type="submit" class="btn btn-success w-100">Agregar</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/Home/TelefonoList/@Model.PersonaID" type="button" class="btn btn-info w-100">
+                    Lista de teléfonos &raquo;
+                </a>
+            </div>
+            <div class="col">
+                <a href="/Home" type="button" class="btn btn-info w-100">
+                    Volver al inicio &raquo;
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
