@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.ta-c{
+    text-align: center;
+}
+
+input {
+    max-width: none !important;
+    width: 100%;
+}
+
+hr {
+    border-top: 1px solid #DBDBDB !important;
+}
+
+table {
+    border: 2px solid #DEDEDE !important;
+}
