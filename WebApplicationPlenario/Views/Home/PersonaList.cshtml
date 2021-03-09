@@ -5,7 +5,29 @@
             <h1>Lista de Personas</h1>
         </div>
     </div>
-    <table class="table table-striped">
+    <div class="row mt-4">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <form method="post">
+        <div class="row ta-c">
+            <div class="col">
+                <input type="text" class="form-control" name="nombreBusado" placeholder="Buscar por nombre">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-warning w-100">Buscar</button>
+            </div>
+            <div class="col-4">
+                <div class="col">
+                    <a href="/Home/PersonaList" type="button" class="btn btn-secondary w-100">
+                        Limpiar búsqueda  &raquo;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <table class="table table-striped mt-4">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)

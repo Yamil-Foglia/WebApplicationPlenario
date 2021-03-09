@@ -3,6 +3,7 @@ using Plenario.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -34,7 +35,7 @@ namespace WebApplicationPlenario.Controllers
 
             this.mainContext.SaveChanges();
 
-            return View("PersonaList", this.mainContext.Persona);
+            return Redirect("/Home/PersonaList");
         }
 
         #endregion
@@ -60,7 +61,7 @@ namespace WebApplicationPlenario.Controllers
             this.mainContext.Entry(personaModicada).State = System.Data.Entity.EntityState.Modified;
             this.mainContext.SaveChanges();
 
-            return View("PersonaList", this.mainContext.Persona.ToList());
+            return Redirect("/Home/PersonaList");
         }
         #endregion
 
@@ -68,6 +69,14 @@ namespace WebApplicationPlenario.Controllers
         public ActionResult PersonaList()
         {
             return View(this.mainContext.Persona.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult PersonaList(string nombreBusado)
+        {
+            var personas = this.mainContext.Persona.ToList().Where(x => x.Nombre.ToLower() == nombreBusado.ToLower());
+
+            return View("PersonaList", personas.ToList());
         }
         #endregion
 
@@ -84,11 +93,14 @@ namespace WebApplicationPlenario.Controllers
         {
             var persona = this.mainContext.Persona.ToList().Where(x => x.PersonaID == id).FirstOrDefault();
 
+            ViewBag.Message = String.Format("Hello{0}", DateTime.Now.ToString());
+
+
             this.mainContext.Persona.Remove(persona);
 
             this.mainContext.SaveChanges();
 
-            return View("PersonaList", this.mainContext.Persona.ToList());
+            return Redirect("/Home/PersonaList");
         }
         #endregion
 
