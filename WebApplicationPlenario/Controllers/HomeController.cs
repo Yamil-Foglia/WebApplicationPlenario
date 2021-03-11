@@ -93,9 +93,6 @@ namespace WebApplicationPlenario.Controllers
         {
             var persona = this.mainContext.Persona.ToList().Where(x => x.PersonaID == id).FirstOrDefault();
 
-            ViewBag.Alert = String.Format("Hello{0}", DateTime.Now.ToString());
-
-
             this.mainContext.Persona.Remove(persona);
 
             this.mainContext.SaveChanges();
